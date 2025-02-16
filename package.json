@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "prettier": "^3.5.1"
   },
   "name": "p2p",
   "version": "1.0.0",
