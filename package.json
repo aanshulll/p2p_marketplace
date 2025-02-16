@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "name": "p2p",
+  "version": "1.0.0",
+  "description": "this is p2p app",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "anshul",
+  "license": "ISC"
+}
