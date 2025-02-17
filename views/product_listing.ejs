@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <form action="/add_product" method="post" enctype="multipart/form-data">
+        <h1>Add New Product</h1>
+
+        <label for="name">Product Name:
+            <input type="text" name="name" placeholder="Enter Product Name" required>
+        </label>   
+
+        <label for="price">Price (₹):
+            <input type="number" name="price" placeholder="Enter Price" required>
+        </label>
+
+        <label for="description">Description:
+            <textarea name="description" placeholder="Enter Product Description" required></textarea>
+        </label>
+        
+        <label for="file">Upload Product Image:
+            <input type="file" name="file" required> 
+        </label>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
