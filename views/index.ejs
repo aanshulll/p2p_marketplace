@@ -1,12 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peer-to-Peer Marketplace</title>
+  <link rel="stylesheet" href="/style.css">
+  <!-- Google Fonts for a modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-   <h1>Hello, Welcome!</h1> 
+  <!-- Navigation Bar -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="container">
+        <h1 class="logo" onclick="window.location.href='/'">Marketplace</h1>
+        <div class="nav-menu">
+          <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
+          <button class="btn" onclick="window.location.href='/add_product'">Add Product</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Discover Unique Finds</h1>
+      <p>Explore the best of peer-to-peer trading. Buy, sell, and connect with ease.</p>
+      <button class="btn" onclick="window.location.href='/add_product'">Sell Your Product</button>
+    </div>
+  </section>
+
+  <!-- Product Grid Section -->
+  <section class="product-grid container">
+    <h2>Latest Products</h2>
+    <div class="grid">
+      <% 
+        // Placeholder product data
+        const dummyProducts = [
+          { name: "Vintage Camera", description: "Capture timeless moments with style.", price: 1200, file: "placeholder1.jpg" },
+          { name: "Handcrafted Chair", description: "Unique design meets comfort.", price: 3500, file: "placeholder2.jpg" },
+          { name: "Antique Clock", description: "A piece of history for your home.", price: 2200, file: "placeholder3.jpg" },
+          { name: "Stylish Sneakers", description: "Step out in modern style.", price: 1800, file: "placeholder4.jpg" }
+        ];
+        dummyProducts.forEach(product => { 
+      %>
+      <div class="product-card">
+        <img src="/uploads/<%= product.file %>" alt="<%= product.name %>">
+        <div class="card-content">
+          <h3><%= product.name %></h3>
+          <p><%= product.description %></p>
+          <span class="price">₹ <%= product.price %></span>
+          <button class="btn view-btn">View Details</button>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <%= new Date().getFullYear() %> Marketplace. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Client-side Script for Searching -->
+  <script>
+    function searchProducts() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.product-card');
+      cards.forEach(card => {
+        const title = card.querySelector('.card-content h3').innerText.toLowerCase();
+        card.style.display = title.includes(input) ? '' : 'none';
+      });
+    }
+  </script>
 </body>
 </html>

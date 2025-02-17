@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <form action="/register" method="post">
-        <h1>Register</h1>
-        <label for="name">Name: 
-            <input type="text" name="name" placeholder="Enter Name" required>
-        </label>   
-
-        <label for="email">Email: 
-            <input type="email" name="email" placeholder="Enter Email" required>
-        </label> 
-
-        <label for="password">Password: 
-            <input type="password" name="password" placeholder="Enter Password" required>
-        </label> 
-
-        <button type="submit">Register</button>
-    </form>
+  <section class="auth-section">
+    <div class="auth-container">
+      <h2>Create a New Account</h2>
+      <form action="/register" method="post">
+        <label for="name">Name:
+          <input type="text" name="name" placeholder="Enter your name" required>
+        </label>
+        <label for="email">Email:
+          <input type="email" name="email" placeholder="Enter your email" required>
+        </label>
+        <label for="password">Password:
+          <input type="password" name="password" placeholder="Enter your password" required>
+        </label>
+        <button class="btn" type="submit">Register</button>
+        <p class="signup-text">Already have an account? <a href="/login">Login</a></p>
+      </form>
+    </div>
+  </section>
 </body>
 </html>
